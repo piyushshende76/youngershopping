@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FB5400</color>
+    <color name="colorPrimaryDark">#FB5400</color>
+    <color name="colorAccent">#FB5400</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#E3E3E3</color>
+    <color name="black">#000000</color>
+    <color name="dark_black">#000000</color>
+    <color name="dark_gray">#BAB7B7</color>
+    <color name="color_1">#FF9800</color>
+    <color name="color_2">#1B4DDC</color>
+    <color name="color_3">#ff0023</color>
+    <color name="orange">#FFBB00</color>
+    <color name="yelow">#ffee05</color>
+    <color name="purple">#ed0bc0</color>
+
+    <color name="green">#FF9800</color>
+    <color name="light_gray">#faf5f5</color>
+    <color name="contact_name">#333333</color>
+    <color name="contact_number">#8c8c8c</color>
+
+</resources>

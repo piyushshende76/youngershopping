@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "22975673052",
+    "firebase_url": "https://vaggieswold-f02ab.firebaseio.com",
+    "project_id": "vaggieswold-f02ab",
+    "storage_bucket": "vaggieswold-f02ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22975673052:android:c2641ff05d6a9e66767a19",
+        "android_client_info": {
+          "package_name": "com.youngershopping.tcc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22975673052-fv10sduj40pvd0d0legtrnd9tjdpaerh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.youngershopping.tcc",
+            "certificate_hash": "b5996d3f71eec998457944e0856095519021275e"
+          }
+        },
+        {
+          "client_id": "22975673052-7fka0v02f3fbnu0f8qlfvobpev6t25c9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLrT95QWUKU8MZNLFjV7x4ZjXhy-Mtvm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22975673052-7fka0v02f3fbnu0f8qlfvobpev6t25c9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
