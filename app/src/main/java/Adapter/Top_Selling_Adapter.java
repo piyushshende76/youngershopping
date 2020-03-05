@@ -59,7 +59,7 @@ public class Top_Selling_Adapter extends RecyclerView.Adapter<Top_Selling_Adapte
         Top_Selling_model mList = modelList.get(position);
 
         preferences = context.getSharedPreferences("lan", MODE_PRIVATE);
-       String language=preferences.getString("language","");
+       String language=preferences.getString("  language","");
         Glide.with(context)
                 .load(BaseURL.IMG_PRODUCT_URL + mList.getProduct_image())
                 .placeholder(R.drawable.icon)

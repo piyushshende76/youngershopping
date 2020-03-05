@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.androidnetworking.AndroidNetworking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,7 @@ public class AppController extends Application {
         locales.add(Locale.ENGLISH);
         locales.add(new Locale("ar","ARABIC"));
         LocaleHelper.setLocale(getApplicationContext(),"en");
+        AndroidNetworking.initialize(getApplicationContext());
             }
 
     public static synchronized AppController getInstance() {

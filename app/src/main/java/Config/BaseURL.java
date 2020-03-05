@@ -59,6 +59,7 @@ public class BaseURL {
     public static String GET_BANNER_URL_1 = BASE_URL + "young_apies/index.php/get/get_offer";
     public static String GET_BANNER_URL = BASE_URL + "young_apies/index.php/get/get_subcategory";
     public static String GET_CHILD_PRODUCT = BASE_URL + "young_apies/index.php/get/get_child";
+    public static String GET_BANNER1 = BASE_URL + "young_apies/index.php/get/get_top_banner";
 
    // https://youngersshoppingclub.com/young_apies/index.php/get/get_subcategory
    // https://youngersshoppingclub.com/young_apies/index.php/get/get_child

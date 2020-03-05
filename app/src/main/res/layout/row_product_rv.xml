@@ -31,8 +31,8 @@
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="187dp"
-            android:layout_height="53dp"
+            android:layout_width="188dp"
+            android:layout_height="71dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -48,15 +48,16 @@
                 android:layout_marginTop="4dp"
                 android:text=""
                 android:textColor="#000"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="12sp" />
 
             <Fonts.LatoBLack
                 android:id="@+id/tv_subcat_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textColor="#000"
-                android:textSize="@dimen/text_size_X_small" />
+                android:textColor="#FF9800"
+                android:textColorLink="#FF9800"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

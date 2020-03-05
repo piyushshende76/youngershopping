@@ -84,6 +84,7 @@ dependencies {
     implementation 'commons-codec:commons-codec:1.10'
     implementation 'com.google.android.gms:play-services-appindexing:9.8.0'
     implementation files('libs/httpmime-4.2.5-sources.jar')
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
 
 
 }

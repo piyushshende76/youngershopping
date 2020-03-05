@@ -83,7 +83,8 @@ public class Home_fragment extends Fragment {
             rv_headre_icons,
             rv_categories,
             rv_cat,
-            rv_sub_cart;
+            rv_sub_cart,
+            banner1;
     private List<Category_model> category_modelList = new ArrayList<>();
     private Home_adapter adapter;
     private boolean isSubcat = false;
@@ -164,6 +165,7 @@ public class Home_fragment extends Fragment {
             make_top_sellers();
             latest_special();
             big_sale();
+            bannerrequest();
 
         }
 
@@ -207,10 +209,17 @@ public class Home_fragment extends Fragment {
 
         //categories icon
         rv_categories = (RecyclerView) view.findViewById(R.id.rv_categories);
-        GridLayoutManager gridLayoutManager3 = new GridLayoutManager(getActivity(), 3);
+        GridLayoutManager gridLayoutManager3 = new GridLayoutManager(getActivity(), 2);
         rv_categories.setLayoutManager(gridLayoutManager3);
         rv_categories.setItemAnimator(new DefaultItemAnimator());
         rv_categories.setNestedScrollingEnabled(false);
+
+        //banner1
+        banner1 = (RecyclerView) view.findViewById(R.id.banner1);
+        GridLayoutManager gridLayoutManager16 = new GridLayoutManager(getActivity(), 2);
+        banner1.setLayoutManager(gridLayoutManager16);
+        banner1.setItemAnimator(new DefaultItemAnimator());
+        banner1.setNestedScrollingEnabled(false);
 
         //Catogary Icons
         rv_items = (RecyclerView) view.findViewById(R.id.rv_home);
@@ -394,7 +403,7 @@ public class Home_fragment extends Fragment {
         }));
 
 
-        // TODO: 12/20/2019  
+        // TODO: 12/20/2019
         //Recycler View Menu Products
         rv_headre_icons.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), rv_headre_icons, new RecyclerTouchListener.OnItemClickListener() {
             @Override
@@ -493,8 +502,29 @@ public class Home_fragment extends Fragment {
 
                 Bundle args = new Bundle();
                 Fragment fm = new Product_fragment();
-                   args.putString("id", String.valueOf(child_home_models.get(position).getChildId()));
-              //  args.putString("id", String.valueOf(35));
+                args.putString("id", String.valueOf(child_home_models.get(position).getChildId()));
+                //  args.putString("id", String.valueOf(35));
+                fm.setArguments(args);
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
+                        .addToBackStack(null).commit();
+
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
+
+        banner1.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), banner1, new RecyclerTouchListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+                Bundle args = new Bundle();
+                Fragment fm = new Product_fragment();
+                args.putString("id", String.valueOf(child_home_models.get(position).getChildId()));
+                //  args.putString("id", String.valueOf(35));
                 fm.setArguments(args);
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
@@ -510,6 +540,10 @@ public class Home_fragment extends Fragment {
 
 
         return view;
+    }
+
+    private void bannerrequest() {
+
     }
 
     private void makeCategoriesRequest() {
@@ -654,13 +688,13 @@ public class Home_fragment extends Fragment {
                                     @Override
                                     public void onSliderClick(BaseSliderView slider) {
                                         //   Toast.makeText(getActivity(), "" + sub_cat, Toast.LENGTH_SHORT).show();
-                                        Bundle args = new Bundle();
-                                        Fragment fm = new Product_fragment();
-                                        args.putString("id", sub_cat);
-                                        fm.setArguments(args);
-                                        FragmentManager fragmentManager = getFragmentManager();
-                                        fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
-                                                .addToBackStack(null).commit();
+//                                        Bundle args = new Bundle();
+//                                        Fragment fm = new Product_fragment();
+//                                        args.putString("id", sub_cat);
+//                                        fm.setArguments(args);
+//                                        FragmentManager fragmentManager = getFragmentManager();
+//                                        fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
+//                                                .addToBackStack(null).commit();
                                     }
                                 });
 
@@ -702,31 +736,7 @@ public class Home_fragment extends Fragment {
                             for (int i = 0; i < response.length(); i++) {
                                 Log.i(TAG, "onResponse:aaa " + response.length());
                                 JSONObject jsonObject = (JSONObject) response.get(i);
-                               /* HashMap<String, String> url_maps = new HashMap<String, String>();
-                                url_maps.put("slider_title", jsonObject.getString("slider_title"));
-                                //   url_maps.put("sub_cat", jsonObject.getString("sub_cat"));
-                                url_maps.put("slider_image", BaseURL.IMG_SLIDER_URL + jsonObject.getString("slider_image"));
-                                listarray.add(url_maps);*/
 
-                               /* BannerCartModel bannerCartModel = new BannerCartModel(
-                                        jsonObject.getString("id"),
-                                        jsonObject.getString("slider_image"),
-                                        jsonObject.getString("slider_title")
-
-                                );
-
-                                models.add(bannerCartModel);*/
-
-
-                                //  Log.i(TAG, "onResponse:aaaaaaaaaa "+jsonObject.getString("sub_name"));
-
-
-                              /*  BannerCartModel bannerCartModel = new BannerCartModel(
-                                        jsonObject.getString("sub_id"),
-                                        jsonObject.getString("sub_name"),
-                                        jsonObject.getString("sub_image")
-                                );
-                                models.add(bannerCartModel);*/
 
                                 Child_Home_Model child_home_model = new Child_Home_Model(
                                         jsonObject.getString("child_id"),
@@ -737,7 +747,7 @@ public class Home_fragment extends Fragment {
 
                             }
 
-                         //   rv_cat.setAdapter(new BannerAdapter(getActivity(), models));
+                            //   rv_cat.setAdapter(new BannerAdapter(getActivity(), models));
                             rv_cat.setAdapter(new BannerAdapter(getActivity(),child_home_models));
 
 
@@ -1180,7 +1190,7 @@ public class Home_fragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d(TAG, "Error: " + error.getMessage());
                 if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                    Toast.makeText(getActivity(), getResources().getString(R.string.connection_time_out), Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getActivity(), getResources().getString(R.string.connection_time_out), Toast.LENGTH_SHORT).show();
                 }
             }
         });

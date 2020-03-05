@@ -99,7 +99,7 @@
                 android:layout_height="144dp"
                 android:elevation="0dp">
 
-                <com.daimajia.slider.library.SliderLayout
+                 <com.daimajia.slider.library.SliderLayout
                     android:id="@+id/home_img_slider"
                     android:layout_width="wrap_content"
                     android:layout_height="139dp"
@@ -120,6 +120,26 @@
                 <!--android:layout_height="wrap_content"-->
                 <!--android:gravity="center" />-->
             </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/banner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/light_gray"
+                    android:scrollbars="none" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,6 +171,7 @@
                     android:layout_marginBottom="@dimen/space_5"
                     android:visibility="gone"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

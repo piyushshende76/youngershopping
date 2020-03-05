@@ -36,6 +36,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -162,12 +163,12 @@ public class Product_fragment extends Fragment {
             makeGetBannerSliderRequest();
 
         }
-
-        tab_cat.setVisibility(View.GONE);
         // main_cat.setVisibility(view.GONE);
 
         tab_cat.setSelectedTabIndicatorColor(getActivity().getResources().getColor(R.color.white));
 
+
+        tab_cat.setVisibility(View.GONE);
         tab_cat.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -222,6 +223,8 @@ public class Product_fragment extends Fragment {
                         ProductDailogFragment ldf = new ProductDailogFragment();
                         Bundle args = new Bundle();
                         args.putString("product_id", product_modelList.get(position).getProduct_id());
+                        args.putInt("position", position);
+                        args.putSerializable("product_modelList", (Serializable) product_modelList);
                         ldf.setArguments(args);
                         getFragmentManager().beginTransaction().replace(
                                 R.id.contentPanel,

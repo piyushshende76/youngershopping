@@ -1,6 +1,6 @@
-<resources>
-    <string name="app_name" translatable="false">Younger Shopping</string>
-    <string name="name" translatable="false">SameCiti - Customer</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Younger</string>
+    <string name="name" translatable="false">Customer</string>
     <string name="currency" translatable="false">\u20B9</string>
     <string name="title_activity_main" translatable="false">MainActivity</string>
     <string name="txtCredits" translatable="false"><a href="http://www.google.com">Google</a></string>
@@ -48,8 +48,8 @@
 
     <!-- activity_register.xml -->
     <string name="tv_reg" translatable="false">Register</string>
-    <string name="tv_reg_name_hint">Name</string>
-    <string name="tv_reg_pincode">Pincode/Area Code/Zip</string>
+    <string name="tv_reg_name_hint" translatable="false">Name</string>
+    <string name="tv_reg_pincode" translatable="false" tools:ignore="MissingTranslation">Pincode/Area Code/Zip</string>
     <string name="tv_reg_socity">City</string>
     <string name="order_amount" translatable="false">Order Amount</string>
     <string name="btn_reg_socity_choose">Choose Society...</string>
@@ -113,7 +113,7 @@
     <!-- row_product_rv.xml -->
     <string name="tv_pro_add">Add</string>
     <string name="tv_pro_update">Update</string>
-    <string name="tv_pro_price">Price per\u0020</string>
+    <string name="tv_pro_price">Price:\u0020</string>
 
     <string name="tv_toolbar_price" translatable="false">Price :</string>
     <string name="tv_toolbar_redeem" translatable="false">Redeem</string>

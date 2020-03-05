@@ -19,5 +19,86 @@
     <color name="light_gray">#faf5f5</color>
     <color name="contact_name">#333333</color>
     <color name="contact_number">#8c8c8c</color>
+    <color name="colorPrimary99">#99014693</color>
+    <color name="colorPrimaryDark99">#80033B79</color>
+
+    <color name="colorAccent99">#99FFD741</color>
+    <color name="floatbtnbg">@color/colorAccent</color>
+    <color name="floatbtnbgClick">#F3CC3A</color>
+
+    <color name="smily_selected">@color/colorPrimary</color>
+    <color name="smily_unselected">@color/colorAccent</color>
+
+    <color name="viewrating">#6FC75B</color>
+    <color name="cartbudget">#C71414</color>
+
+    <color name="cartbudgetClick">#B80E0E</color>
+    <!--  White  -->
+    <color name="colorPrimaryWhite">#fff</color>
+    <color name="colorPrimaryDarkWhite">#fff</color>
+
+
+    <color name="white99">#99ffffff</color>
+    <color name="white70">#70ffffff</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="blue">#4141FF</color>
+
+    <color name="textdark">#333333</color>
+    <color name="text">#5C5C5C</color>
+    <color name="textdark70">#70333333</color>
+    <color name="textlight">#8F8E8E</color>
+    <color name="textlight1">#C7C6C6</color>
+    <color name="item_pressed">@color/line</color>
+    <color name="linedark">#D5D5D5</color>
+    <color name="line">#E2E2E2</color>
+    <color name="linelight">#ECECEC</color>
+    <color name="linelight1">#F7F7F7</color>
+    <color name="linelight2">#F8F7F7</color>
+    <color name="grey">#C6C6C6</color>
+
+    <color name="g1">#7676C5</color>
+    <color name="g2">#767EC5</color>
+    <color name="g3">#76BEC5</color>
+
+    <!--  Order status color  -->
+    <color name="order_red">#ed1c24</color>
+    <color name="order_green">#3bb34a</color>
+    <color name="order_green1">#5BD369</color>
+    <color name="order_orange">#FAAF40</color>
+    <color name="order_pending">@color/floatbtnbgClick</color>
+
+    <color name="redoff">#FFA586</color>
+    <color name="greenoff">#87EE7C</color>
+    <color name="orangeoff">#FFCE8A</color>
+    <color name="yellowoff">#FFE190</color>
+
+    <!--  Shimmer color  -->
+    <color name="shimmer_color">#a2878787</color>
+    <color name="demo_light_transparent">#16000000</color>
+    <color name="default_shimmer_color">#e3e1e3</color>
+
+    <color name="icon_unselected">@color/linedark</color>
+    <color name="icon_selected">@color/colorPrimary</color>
+
+    <color name="add_to_cart">@color/colorPrimary</color>
+    <color name="remove_cart_text">@color/white</color>
+
+    <!--  Range bar  -->
+    <color name="rangebar_accent">#89E075</color>
+    <color name="indigo500">@color/colorPrimary</color>
+    <color name="divider">#1f000000</color>
+
+    <!--  Step view  -->
+    <color name="default_progress_background">#ccc</color>
+
+    <color name="background_color">#F2000000</color>
+    <color name="foreground_color">#b42379</color>
+    <color name="background_text_color">#808080</color>
+    <color name="foreground_text_color">#eeeeee</color>
+    <color name="state_background_color">#BDBDBD</color>
+    <color name="state_background_text_color">#808080</color>
+    <color name="state_foreground_text_color">#eeeeee</color>
+    <color name="demo_state_foreground_color">#3bb34a</color>
 
 </resources>

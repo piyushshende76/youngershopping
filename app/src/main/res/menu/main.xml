@@ -4,20 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
-    <!--<item
-        android:id="@+id/action_language"
-        android:actionLayout="@layout/menu_cart_layout"
-        android:icon="@drawable/language"
-        android:title="@string/nav_home"
-        app:actionLayout="@layout/menu_cart_layout"
-        app:icon="@drawable/language"
-        app:showAsAction="ifRoom" />-->
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/user2"
+        android:title="user"
+        app:icon="@drawable/profile"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_language"
         android:title="Language"
         android:icon="@drawable/language"
         app:showAsAction="always"
-        android:visible="true"
         />
 
     <item

@@ -411,7 +411,7 @@ SharedPreferences sharedPreferences;
         if (sessionManagement.isLoggedIn()) {
             //  tv_number.setVisibility(View.VISIBLE);
             nav_menu.findItem(R.id.nav_logout).setVisible(true);
-            nav_menu.findItem(R.id.nav_powerd).setVisible(true);
+           // nav_menu.findItem(R.id.nav_powerd).setVisible(true);
 
 //            nav_menu.findItem(R.id.nav_user).setVisible(true);
         } else {
@@ -488,6 +488,14 @@ SharedPreferences sharedPreferences;
                 fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
                         .addToBackStack(null).commit();
             }
+            return true;
+        }if (id == R.id.profile) {
+
+                Fragment fm = new Edit_profile_fragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.contentPanel, fm)
+                        .addToBackStack(null).commit();
+
             return true;
         }
 
@@ -576,13 +584,6 @@ SharedPreferences sharedPreferences;
             sessionManagement.logoutSession();
             finish();
 
-        } else if (id == R.id.nav_powerd) {
-            // stripUnderlines(textView);
-            String url = "http://sameciti.com";
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            startActivity(i);
-            finish();
         }
 
         if (fm != null) {

@@ -10,8 +10,9 @@ import java.util.List;
  * Created by Rajesh Dabhi on 26/6/2017.
  */
 
-public class Product_model {
+public class Product_model{
 
+    public static Object SubCat;
     String product_id;
     String product_name;
     String category_id;
@@ -35,14 +36,23 @@ public class Product_model {
     String title;
 
     ArrayList<SubCat> subCat;
+    ArrayList<GalModel> gal;
 
 
     public ArrayList<SubCat> getSubCat() {
         return subCat;
     }
 
+    public ArrayList<GalModel> getGal() {
+        return gal;
+    }
+
     public void setSubCat(ArrayList<SubCat> subCat) {
         this.subCat = subCat;
+    }
+
+    public void setGal(ArrayList<GalModel> gal) {
+        this.gal = gal;
     }
 
     public Product_model() {
@@ -219,6 +229,8 @@ public class Product_model {
     }
 
 
+
+
     public static class SubCat {
 
         @SerializedName("sizes")
@@ -253,5 +265,45 @@ public class Product_model {
         public void setColor(String color) {
             this.color = color;
         }
+
+
+    }
+
+    public static class GalModel {
+
+        @SerializedName("product_id")
+        @Expose
+        private String product_id;
+
+        @SerializedName("photo")
+        @Expose
+        private String photo;
+
+
+        public GalModel() {
+        }
+
+        public GalModel(String product_id, String photo) {
+            this.product_id = product_id;
+            this.photo = photo;
+        }
+
+        public String getProduct_id() {
+            return product_id;
+        }
+
+        public void setProduct_id(String product_id) {
+            this.product_id = product_id;
+        }
+
+        public String getPhoto() {
+            return photo;
+        }
+
+        public void setPhoto(String photo) {
+            this.photo = photo;
+        }
+
+
     }
 }

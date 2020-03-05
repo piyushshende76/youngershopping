@@ -41,10 +41,7 @@
             android:icon="@drawable/ic_exit"
             android:title="@string/nav_logout" />
 
-        <item
-            android:id="@+id/nav_powerd"
-            android:icon="@drawable/copy"
-            android:title="@string/status_stop" />
+
 
     </group>
 </menu>

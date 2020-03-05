@@ -1,8 +1,6 @@
 package Adapter;
 
-import android.app.Activity;
 import android.app.Dialog;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -28,7 +26,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import Config.BaseURL;
-import Fragment.ProductDailogFragment;
 import Model.Home_Size_model;
 import Model.Product_model;
 import Model.Size_model;
@@ -56,6 +53,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     SharedPreferences preferences;
 
     String mColor = "#000000", mSize = "6";
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView tv_title, tv_price, tv_reward, tv_total, tv_contetiy, tv_add, tv_price2;
@@ -192,14 +190,9 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
     public void onBindViewHolder(Product_adapter.MyViewHolder holder, int position) {
         Product_model mList = modelList.get(position);
 
-       /* if (mList.getSubCat().size() > 0) {
-            for (int i = 0; i < mList.getSubCat().size(); i++)
-                Log.i(TAG, "onBindViewHolder: " + mList.getSubCat().get(i).getColor());
-        }
 
-*/
 
-        Log.i(TAG, "onBindViewHolder:position "+position);
+        Log.i(TAG, "onBindViewHolder:position " + position);
         try {
             if (mList.getSubCat().size() > 0) {
                 for (int i = 0; i < mList.getSubCat().size(); i++)
@@ -215,7 +208,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
 
         Glide.with(context)
                 .load(BaseURL.IMG_PRODUCT_URL + mList.getProduct_image())
-               // .centerCrop()
+                // .centerCrop()
                 .placeholder(R.drawable.icon)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -223,9 +216,9 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
                 .into(holder.iv_logo);
         preferences = context.getSharedPreferences("lan", MODE_PRIVATE);
         language = preferences.getString("language", "");
-       holder.tv_title.setText(mList.getProduct_name());
+        holder.tv_title.setText(mList.getProduct_name());
         holder.tv_reward.setText(mList.getRewards());
-        holder.tv_price.setText(context.getResources().getString(R.string.tv_pro_price) + " " +
+        holder.tv_price.setText(context.getResources().getString(R.string.tv_pro_price) +
                 mList.getPrice() + context.getResources().getString(R.string.currency));
         Log.i(TAG, "price2: " + getprice);
 
@@ -241,7 +234,6 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
 */
             }
         });
-
 
 
         getprice = mList.getPrice();
@@ -325,7 +317,7 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
         final TextView tv_contetiy = (TextView) dialog.findViewById(R.id.tv_subcat_contetiy);
         final TextView tv_add = (TextView) dialog.findViewById(R.id.tv_subcat_add);
         final TextView tv_price = (TextView) dialog.findViewById(R.id.tv_product_price);
-        final ArrayList<Size_model>[] size_models = new ArrayList[]{new ArrayList<>()};
+       final ArrayList<Size_model>[] size_models = new ArrayList[]{new ArrayList<>()};
         final String[] getid = new String[1];
         final RecyclerView size_rv = (RecyclerView) dialog.findViewById(R.id.size);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context) {
@@ -534,11 +526,10 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
 */
     }
 
-    public class SubCatDetals extends RecyclerView.Adapter<SubCatDetals.Holder> {
+    public static class SubCatDetals extends RecyclerView.Adapter<SubCatDetals.Holder> {
 
         ArrayList<Product_model.SubCat> subCats = new ArrayList<>();
         Context context;
-
         public SubCatDetals(ArrayList<Product_model.SubCat> subCat, Context context) {
             this.subCats = subCat;
             this.context = context;
@@ -568,10 +559,10 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
                         map.put("unit_value", cat.getSizes());
                         map.put("unit", cat.getColor());*/
 
-                        mColor = cat.getColor();
-                        mSize = cat.getSizes();
+//                        mColor = cat.getColor();
+//                        mSize = cat.getSizes();
 
-                        Log.i(TAG, "onClick: "+mSize);
+                        //  Log.i(TAG, "onClick: "+mSize);
                     }
                 });
 
@@ -597,5 +588,4 @@ public class Product_adapter extends RecyclerView.Adapter<Product_adapter.MyView
             }
         }
     }
-
 }
